@@ -9,7 +9,11 @@ const Counter = () => {
 
 
     const isNumberNon = num <= 0
-    const isNumberMax = num >= 5
+    const isNumberMax = num >= 500
+
+
+
+
 
 
     const onClickHandler = () => {
@@ -20,6 +24,9 @@ const Counter = () => {
         setNum(0);
     }
 
+    const onClickx2Handler = () => {
+        setNum(num=num*2);
+    }
 
     return (
         <div className="App-header">
@@ -36,7 +43,12 @@ const Counter = () => {
                         title={'reset'}
                         callBack={onClickResetHandler}
                         isDisabled={isNumberNon}
+                    ></Button>    <Button
+                        title={'x2'}
+                        callBack={onClickx2Handler}
+                        isDisabled={isNumberNon}
                     ></Button>
+
                 </div>
             </div>
         </div>

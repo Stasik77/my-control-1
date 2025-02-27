@@ -1,7 +1,7 @@
-import React  from 'react';
+import React from 'react';
 
 
-type ButtonPropsType  = {
+type ButtonPropsType = {
     title: string,
     callBack: () => void,
     isDisabled?: boolean,
@@ -16,8 +16,10 @@ const Button = (props: ButtonPropsType) => {
     }
 
     return (
-        <button className={!props.isDisabled ? 'btn' : 'btnDisabled'} onClick={onClickHandler}
-                disabled={props.isDisabled}>{props.title}</button>
+        <button
+            className={!props.isDisabled ? 'btn' : 'btnDisabled'}
+            onClick={onClickHandler}
+            disabled={props.isDisabled}>{props.title}</button>
     );
 };
 

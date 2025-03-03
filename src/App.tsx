@@ -1,14 +1,21 @@
-import React from 'react';
+import React, {ChangeEvent} from 'react';
 import './App.css';
 import Counter from './component/Counter';
-import SetupCounter from './component/SetupCounter';
+
+
+
+
+
 
 function App() {
-  return <>
-    <Counter/>
-    {/*<SetupCounter/>*/}
-  </>
 
+
+
+
+  return <>
+  <Counter/>
+
+  </>
 
 
 

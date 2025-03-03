@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Button from './Button';
 
 
@@ -8,6 +8,19 @@ const Counter = () => {
     const isNumberNon = num <= 0
     const isNumberMax = num >= 5
 
+
+    useEffect(() => {
+        let valueString = localStorage.getItem('counterValue');
+        if(valueString) {
+            let newValue = JSON.parse(valueString);
+            setNum(newValue);
+        }
+    }, []);
+
+    useEffect(() => {
+        localStorage.setItem("counterValue",JSON.stringify(num))
+    },[num])
+
     const onClickHandler = () => {
         setNum(++num );
     }
@@ -15,6 +28,9 @@ const Counter = () => {
     const onClickResetHandler = () => {
         setNum(0);
     }
+
+
+    console.log('LocalStorage size:', JSON.stringify(localStorage).length);
 
 
     return (
